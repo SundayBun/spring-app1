@@ -54,4 +54,11 @@ public class MusicPlayer {
         System.out.println("Playing: "+music.getSong());
     }
 
+    public void doMyInit(){
+        System.out.println("Checking calling for init method");
+    }
+    public void doMyDestroy(){
+        System.out.println("Checking calling for destroy method");
+    }
+
 }

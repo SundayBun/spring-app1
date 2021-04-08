@@ -40,6 +40,10 @@ public class TestSpringMusic {
         System.out.println(musicPlayer);
         System.out.println(musicPlayerOther);
 
+        System.out.println("------------------------------");
+        ClassicalMusic classicalMusic=context.getBean("musicBean",ClassicalMusic.class);
+        System.out.println(classicalMusic.getSong());
+
         context.close();
     }
 }
