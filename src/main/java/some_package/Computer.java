@@ -14,11 +14,11 @@ public class Computer {
         this.id=1;
     }
 
-    @Override
-    public String toString() {
-        return "Computer{" +
-                "id=" + id +
-                ", musicPlayer=" + musicPlayer.playMusic() +
-                "}";
-    }
+//    @Override
+//    public String toString() {
+//        return "Computer{" +
+//                "id=" + id +
+//                ", musicPlayer=" + musicPlayer.playMusic() +
+//                "}";
+//    }
 }

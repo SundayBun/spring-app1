@@ -29,7 +29,12 @@ public class TestSpring {
         //урок 10
        // MusicPlayer musicPlayer=context.getBean("musicPlayer",MusicPlayer.class);
       //  musicPlayer.playMusic();
-        Computer computer=context.getBean("computer",Computer.class);
-        System.out.println(computer);
+
+
+//        Computer computer=context.getBean("computer",Computer.class);
+//        System.out.println(computer);
+
+        MusicPlayer musicPlayer=context.getBean("musicPlayer",MusicPlayer.class);
+        System.out.println(musicPlayer.playMusic(MusicStyle.ROCK));
     }
 }
