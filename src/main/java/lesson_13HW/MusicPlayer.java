@@ -1,10 +1,11 @@
-package some_package;
+package lesson_13HW;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
@@ -20,14 +21,11 @@ public class MusicPlayer {
     @Value("${MusicPlayer.volume}")
     private int volume;
 
-    private Music music1;
-    private Music music2;
+    private List<Music> musicList;
 
     @Autowired
-    public MusicPlayer(@Qualifier("rockMusic") Music music1,
-                       @Qualifier("classicalMusic") Music music2) {
-        this.music1 = music1;
-        this.music2 = music2;
+    public MusicPlayer(List<Music> musicList) {
+        this.musicList = musicList;
     }
 
     public String getName() {
@@ -37,31 +35,10 @@ public class MusicPlayer {
     public int getVolume() {
         return volume;
     }
-//    @Autowired
-//    public MusicPlayer(Music clmusic, RockMusic rcmusic) {
-//        this.music = clmusic;
-//        this.music = rcmusic;
-//    }
-
-    // @Autowired
-    //здесь внедряем зависимость DI
-   // public MusicPlayer(Music music) {
-    //    this.music = music;
-   // }
-   // @Autowired
-    //DI через сеттер
-    //public void setMusic(Music music) {
-    //    this.music = music;
-   // }
 
 
-    public String playMusic(MusicStyle musicStyle){
-        switch (musicStyle){
-            case ROCK:return "Playing: "+  music1.getSong()[randomChoice()];
-            case CLASSICAL: return "Playing: "+  music2.getSong()[randomChoice()];
-        }
-        return "";
-      //  return "Playing: "+ music1.getSong()+", "+music2.getSong();
+    public String playMusic(){
+       return "Playing"+ Arrays.toString(musicList.get(randomChoice()).getSong());
     }
 
     public int randomChoice(){

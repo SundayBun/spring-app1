@@ -1,8 +1,7 @@
-package some_package;
+package lesson_13HW;
 
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class TestSpring {
     public static void main(String[] args) {
@@ -41,14 +40,11 @@ public class TestSpring {
 
         AnnotationConfigApplicationContext context=new AnnotationConfigApplicationContext(SpringConfig.class);
         //анотация @Value
-        MusicPlayer musicPlayer=context.getBean("musicPlayer",MusicPlayer.class);
-        System.out.println(musicPlayer.getName());
-        System.out.println(musicPlayer.getVolume());
+        MusicPlayer musicPlayer=context.getBean("musicPlayer", MusicPlayer.class);
+        System.out.println(musicPlayer.playMusic());
 
-        //анотация @Scope
-        ClassicalMusic classicalMusic=context.getBean("classicalMusic",ClassicalMusic.class);
-        ClassicalMusic classicalMusic2=context.getBean("classicalMusic",ClassicalMusic.class);
-        System.out.println(classicalMusic==classicalMusic2);
+
+
 
 
 
